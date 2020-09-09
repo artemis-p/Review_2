@@ -4,6 +4,8 @@
 # [1001], 40, 1000 |[1000] 
 
 def music_filter(frequencies, low_value, high_value)
+  raise "No frequencies provided" if frequencies == []
+
   new_filter = []
   frequencies.each do |freq|
     if freq < low_value
@@ -13,11 +15,12 @@ def music_filter(frequencies, low_value, high_value)
     else
       return frequencies
     end
+    p new_filter
   end
   return new_filter
 end
 
-music_filter([30], 40, 1000)
+music_filter([30,20,20], 40, 1000)
 
 
 
