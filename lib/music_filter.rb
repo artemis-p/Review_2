@@ -8,7 +8,9 @@ def music_filter(frequencies, low_value, high_value)
   frequencies.each do |freq|
     if freq < low_value
       new_filter << freq = low_value
-    else 
+    elsif freq > high_value
+      new_filter << freq = high_value
+    else
       return frequencies
     end
   end
